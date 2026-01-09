@@ -13,25 +13,6 @@ The goal is to answer one question:
 - Git
 - Internet connection (RSS feeds)
 
----
-
-## Project Structure
-
-news-digest-pl/
-├── src/ # Application logic
-├── feeds/ # RSS feed definitions
-├── outputs/ # Generated digests (ignored by git)
-├── state/ # Runtime cache (ignored by git)
-├── main.py # Entry point
-├── requirements.txt
-├── README.md
-└── .gitignore
-
-yaml
-Copy code
-
----
-
 ## Setup (First Time)
 
 ### 1. Clone the repository
