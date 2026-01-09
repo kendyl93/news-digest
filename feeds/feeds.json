@@ -1,0 +1,12 @@
+[
+  {
+    "source": "PAP Mediaroom",
+    "category_hint": "news",
+    "url": "https://pap-mediaroom.pl/rss.xml"
+  },
+  {
+    "source": "Polsat News",
+    "category_hint": "world",
+    "url": "https://www.polsatnews.pl/rss/swiat.xml"
+  }
+]
