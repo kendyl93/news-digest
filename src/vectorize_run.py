@@ -21,7 +21,7 @@ def main() -> None:
     print("=== 5.3 TF-IDF ===")
     print(f"- docs (kept): {len(texts)}")
 
-    vectorizer, X = vectorize_tfidf(texts, min_df=2, ngram_range=(1, 2), max_features=20000)
+    vectorizer, X = vectorize_tfidf(texts, min_df=1, ngram_range=(1, 2), max_features=20000)
 
     print(f"- matrix shape: {X.shape} (docs x features)")
     print(f"- vocabulary size: {len(vectorizer.get_feature_names_out())}")

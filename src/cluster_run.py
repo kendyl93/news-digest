@@ -14,14 +14,17 @@ def main() -> None:
     articles = load_latest_raw()
     filtered, texts, stats = build_texts(articles)
 
-    # Keep min_df=2 now that you have enough docs
-    vectorizer, X = vectorize_tfidf(texts, min_df=2, ngram_range=(1, 2), max_features=20000)
+    # Keep rare title terms to avoid generic mixed clusters
+    vectorizer, X = vectorize_tfidf(texts, min_df=1, ngram_range=(1, 2), max_features=20000)
 
     # labels = cluster_articles(X.toarray(), distance_threshold=0.80)
-    X_lsa, _ = lsa_transform(X, n_components=120)
+    # Preserve more dimensions to avoid over-smoothing unrelated items
+    n_components = min(200, X.shape[1] - 1, X.shape[0] - 1)
+    n_components = max(80, n_components)
+    X_lsa, _ = lsa_transform(X, n_components=n_components)
     k = choose_k(X_lsa.shape[0])
     labels = kmeans_labels(X_lsa, k=k)
-    print(f"Using LSA+KMeans with k={k}")
+    print(f"Using LSA+KMeans with k={k}, n_components={n_components}")
 
     # group indices by label
     groups = defaultdict(list)

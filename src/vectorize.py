@@ -16,7 +16,7 @@ PL_STOPWORDS = [
 
 def vectorize_tfidf(
     texts: List[str],
-    min_df: int = 2,
+    min_df: int = 1,
     ngram_range: Tuple[int, int] = (1, 2),
     max_features: int = 20000,
 ) -> Tuple[TfidfVectorizer, csr_matrix]:
@@ -24,7 +24,7 @@ def vectorize_tfidf(
     Convert a list of texts into TF-IDF vectors.
 
     Defaults are tuned for "daily news":
-    - min_df=2 removes extremely rare tokens (noise)
+    - min_df=1 keeps rare, event-specific terms (often only in one title)
     - ngram_range=(1,2) captures phrases
     - max_features prevents feature explosion
     """
@@ -36,6 +36,7 @@ def vectorize_tfidf(
         stop_words=PL_STOPWORDS,
         ngram_range=ngram_range,
         max_features=max_features,
+        token_pattern=r"(?u)\b(?!\d+\b)\w{2,}\b",
     )
     X = vectorizer.fit_transform(texts)
     return vectorizer, X
