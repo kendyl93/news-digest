@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from src.feeds import load_feeds
@@ -24,7 +24,7 @@ def main():
         for item in items:
             item["source"] = source
             item["feed_url"] = url
-            item["fetched_at"] = datetime.utcnow().isoformat()
+            item["fetched_at"] = datetime.now(timezone.utc).isoformat()
             all_articles.append(item)
     print(f"\nTotal: {len(all_articles)}")
     print("\nSample:")
@@ -32,7 +32,7 @@ def main():
         print(f"- {article['source']}: {article['title']}")
         print(f"  {article['link']}")
 
-    out_path = OUTPUTS_DIR / f"raw_{datetime.utcnow().date().isoformat()}.json"
+    out_path = OUTPUTS_DIR / f"raw_{datetime.now(timezone.utc).date().isoformat()}.json"
     out_path.write_text(json.dumps(all_articles, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\nSaved: {out_path}")
 
