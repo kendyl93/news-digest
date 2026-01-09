@@ -1,0 +1,6 @@
+ .venv/
+ __pycache__/
+ *.pyc
+ outputs/  # katalog z wygenerowanymi wynikami
+
+ .DS_Store
