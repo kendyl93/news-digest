@@ -1,5 +1,6 @@
 import sys
 import feedparser
+from src.feeds import load_feeds
 
 def main() -> None:
     print("Python:", sys.version.split()[0])
@@ -7,4 +8,7 @@ def main() -> None:
     print("OK ✅")
 
 if __name__ == "__main__":
-    main()
+    feeds = load_feeds()
+    print(f"Loaded {len(feeds)} feeds")
+    for f in feeds:
+        print(f"- {f['source']}: {f['url']}")
