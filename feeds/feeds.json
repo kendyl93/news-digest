@@ -8,5 +8,55 @@
     "source": "Polsat News",
     "category_hint": "world",
     "url": "https://www.polsatnews.pl/rss/swiat.xml"
+  },
+  {
+    "source": "TVN24",
+    "category_hint": "news",
+    "url": "https://tvn24.pl/najnowsze.xml"
+  },
+  {
+    "source": "Policja",
+    "category_hint": "news",
+    "url": "https://policja.pl/dokumenty/rss/1-rss-1.rss"
+  },
+  {
+    "source": "RMF24",
+    "category_hint": "news",
+    "url": "https://www.rmf24.pl/fakty/swiat/feed"
+  },
+  {
+    "source": "E-zdrowie",
+    "category_hint": "news",
+    "url": "https://ezdrowie.gov.pl/rss/view/?categoryIds=52"
+  },
+  {
+    "source": "Bankier.pl",
+    "category_hint": "business",
+    "url": "https://www.bankier.pl/rss/wiadomosci.xml"
+  },
+  {
+    "source": "Sejm RP",
+    "category_hint": "politics",
+    "url": "https://www.sejm.gov.pl/rss.nsf/feed.xsp?symbol=NEWS"
+  },
+  {
+    "source": "BBC News Polska",
+    "category_hint": "news",
+    "url": "https://feeds.bbci.co.uk/polska/rss.xml"
+  },
+  {
+    "source": "Interia.pl",
+    "category_hint": "news",
+    "url": "https://www.interia.pl/rss"
+  },
+  {
+    "source": "Puls Biznesu",
+    "category_hint": "news",
+    "url": "https://www.pb.pl/rss/najnowsze.xml?utm_source=RSS&utm_medium=RSS&utm_campaign=Z%20ostatniej%20chwili"
+  },
+  {
+    "source": "Google news - świat",
+    "category_hint": "news",
+    "url": "https://news.google.com/rss?topic=w&hl=pl&gl=PL&ceid=PL:pl"
   }
 ]
