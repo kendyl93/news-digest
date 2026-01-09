@@ -1,5 +1,5 @@
 from src.io_raw import load_latest_raw
-from src.texts import build_texts
+from src.texts import build_texts, clean_title
 
 
 def main() -> None:
@@ -14,7 +14,7 @@ def main() -> None:
     for i, t in enumerate(texts[:5], start=1):
         a = filtered[i - 1]
         print(f"\n{i}) {a.get('source', 'UNKNOWN')}")
-        print(f"   title: {a.get('title','')}")
+        print(f"   title: {clean_title(a.get('title',''))}")
         if a.get("summary"):
             print(f"   summary: {(a.get('summary') or '')[:140]}...")
         print(f"   text: {t[:220]}...")

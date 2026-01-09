@@ -10,7 +10,8 @@ PL_STOPWORDS = [
     "by","być","będzie","będą","może","można","tam", "gdzie", "mówi", "powiedział", "podaje", 
     "także", "kolejne", "sprawie", "wspólna", "żeby", "czekaj", "tylko", "jeszcze", "więcej", 
     "będą", "będzie", "przed", "ponieważ", "dlatego", "który", "która", "które", "ich", "jego", 
-    "jej", "nas", "was", "sobie", "mnie", "mną", "tobie", "tobą", "jednak", "wczoraj", "dziś"
+    "jej", "nas", "was", "sobie", "mnie", "mną", "tobie", "tobą", "jednak", "wczoraj", "dziś",
+    "tvn24", "rmf24", "polsatnews", "bankier", "money", "wyborcza", "medonet", "google", "news", "pl"
 ]
 
 def vectorize_tfidf(
@@ -28,6 +29,7 @@ def vectorize_tfidf(
     - max_features prevents feature explosion
     """
     vectorizer = TfidfVectorizer(
+        sublinear_tf=True,
         lowercase=True,
         min_df=min_df,
         max_df=0.85,

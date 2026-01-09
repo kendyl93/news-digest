@@ -25,29 +25,14 @@
     "url": "https://www.rmf24.pl/fakty/swiat/feed"
   },
   {
-    "source": "E-zdrowie",
-    "category_hint": "news",
-    "url": "https://ezdrowie.gov.pl/rss/view/?categoryIds=52"
-  },
-  {
     "source": "Bankier.pl",
     "category_hint": "business",
     "url": "https://www.bankier.pl/rss/wiadomosci.xml"
   },
   {
-    "source": "Sejm RP",
-    "category_hint": "politics",
-    "url": "https://www.sejm.gov.pl/rss.nsf/feed.xsp?symbol=NEWS"
-  },
-  {
     "source": "BBC News Polska",
     "category_hint": "news",
     "url": "https://feeds.bbci.co.uk/polska/rss.xml"
-  },
-  {
-    "source": "Interia.pl",
-    "category_hint": "news",
-    "url": "https://www.interia.pl/rss"
   },
   {
     "source": "Puls Biznesu",

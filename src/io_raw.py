@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import List, Dict, Any
 
+from src.texts import clean_title
+
 
 OUTPUTS_DIR = Path("outputs")
 
@@ -46,7 +48,7 @@ if __name__ == "__main__":
     print("\nSample (up to 5):")
     for a in articles[:5]:
         source = a.get("source", "UNKNOWN")
-        title = (a.get("title") or "").strip()
+        title = clean_title(a.get("title","").strip())
         link = (a.get("link") or "").strip()
         published = a.get("published") or ""
         print(f"- {source}: {title}")

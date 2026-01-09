@@ -1,4 +1,5 @@
 import feedparser
+from src.texts import clean_title
 
 def fetch_feed(url: str):
     parsed = feedparser.parse(url)
@@ -6,7 +7,7 @@ def fetch_feed(url: str):
 
     articles = []
     for entry in entries:
-        title = (entry.get("title") or "").strip()
+        title = clean_title(entry.get("title") or "").strip()
         link = (entry.get("link") or "").strip()
         summary = (entry.get("summary") or entry.get("description") or "").strip()
         published = entry.get("published") or entry.get("updated") or ""
